@@ -228,6 +228,12 @@ function initMemoryGame() {
     memoryAttempts = 0;
     flippedCards = [];
     
+    // Hide feedback
+    const feedback = document.getElementById('memory-feedback');
+    if (feedback) {
+        feedback.style.display = 'none';
+    }
+    
     // Select subset of terms for memory game
     const gameSize = Math.min(8, Math.floor(filteredTerms.length / 2));
     const selectedTerms = filteredTerms.slice(0, gameSize);
@@ -296,7 +302,12 @@ function checkMemoryMatch() {
         
         if (matchedPairs === memoryCards.length / 2) {
             setTimeout(() => {
-                alert(`🎉 Congratulations! You matched all pairs in ${memoryAttempts} attempts!`);
+                const feedback = document.getElementById('memory-feedback');
+                if (feedback) {
+                    feedback.textContent = `🎉 Congratulations! You matched all pairs in ${memoryAttempts} attempts!`;
+                    feedback.className = 'feedback correct';
+                    feedback.style.display = 'block';
+                }
             }, 500);
         }
     } else {
@@ -356,11 +367,11 @@ function initQuiz() {
     
     quizQuestions = quizTerms.map(term => {
         // Create wrong answers from other terms
-        const wrongAnswers = filteredTerms
-            .filter(t => t.term !== term.term)
-            .map(t => t.meaning)
-            .sort(() => Math.random() - 0.5)
-            .slice(0, 3);
+        const wrongAnswers = shuffleArray(
+            filteredTerms
+                .filter(t => t.term !== term.term)
+                .map(t => t.meaning)
+        ).slice(0, 3);
         
         const allAnswers = shuffleArray([term.meaning, ...wrongAnswers]);
         

@@ -30,7 +30,7 @@ The application includes several features designed to improve memory retention:
 
 ### 📚 Latin Terms Included
 
-The application includes 85+ Latin terms across various categories:
+The application includes 84 Latin terms across various categories:
 
 - Common phrases (et cetera, ad hoc, vice versa)
 - Legal terms (habeas corpus, prima facie, corpus delicti)
@@ -125,7 +125,7 @@ This is a pure HTML/CSS/JavaScript application that runs entirely in the browser
 - Progressive difficulty builds confidence
 
 ### Latin Knowledge
-- Learn 85+ essential Latin terms
+- Learn 84 essential Latin terms
 - Understand meanings in context
 - Practice pronunciation patterns
 - Build academic and professional vocabulary

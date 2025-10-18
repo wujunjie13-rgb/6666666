@@ -51,7 +51,6 @@ const latinTerms = [
     { term: "exempli gratia", meaning: "for example", difficulty: "advanced" },
     { term: "ex libris", meaning: "from the books of", difficulty: "advanced" },
     { term: "ex post facto", meaning: "after the fact; retroactively", difficulty: "advanced" },
-    { term: "faux pas", meaning: "false step; social blunder", difficulty: "advanced" },
     { term: "in loco parentis", meaning: "in place of a parent", difficulty: "advanced" },
     { term: "in medias res", meaning: "into the middle of things", difficulty: "advanced" },
     { term: "in situ", meaning: "in position; in place", difficulty: "advanced" },
