@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latin Typing Practice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Latin Typing Practice</h1>
+            <p class="subtitle">Improve your typing skills and memory with Latin terms</p>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="stat-label">Speed:</span>
+                <span id="wpm" class="stat-value">0</span>
+                <span class="stat-unit">WPM</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Accuracy:</span>
+                <span id="accuracy" class="stat-value">100</span>
+                <span class="stat-unit">%</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Score:</span>
+                <span id="score" class="stat-value">0</span>
+            </div>
+        </div>
+
+        <div class="mode-selector">
+            <button class="mode-btn active" data-mode="typing">Typing Practice</button>
+            <button class="mode-btn" data-mode="memory">Memory Match</button>
+            <button class="mode-btn" data-mode="flashcard">Flashcards</button>
+            <button class="mode-btn" data-mode="quiz">Quiz</button>
+        </div>
+
+        <div class="difficulty-selector">
+            <label>Difficulty:</label>
+            <select id="difficulty">
+                <option value="beginner">Beginner (10 terms)</option>
+                <option value="intermediate" selected>Intermediate (20 terms)</option>
+                <option value="advanced">Advanced (30 terms)</option>
+                <option value="expert">Expert (All terms)</option>
+            </select>
+        </div>
+
+        <!-- Typing Practice Mode -->
+        <div id="typing-mode" class="exercise-mode active">
+            <div class="term-display">
+                <div class="term-header">
+                    <span class="term-counter">Term <span id="current-term">1</span> of <span id="total-terms">20</span></span>
+                </div>
+                <div class="latin-term" id="latin-term">et cetera</div>
+                <div class="term-meaning" id="term-meaning">and the rest; and so forth</div>
+            </div>
+
+            <div class="typing-area">
+                <input type="text" id="typing-input" placeholder="Type the Latin term here..." autocomplete="off">
+                <div class="feedback" id="feedback"></div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+
+            <div class="controls">
+                <button id="skip-btn" class="btn btn-secondary">Skip</button>
+                <button id="restart-btn" class="btn btn-secondary">Restart</button>
+            </div>
+        </div>
+
+        <!-- Memory Match Mode -->
+        <div id="memory-mode" class="exercise-mode">
+            <div class="memory-grid" id="memory-grid"></div>
+            <div class="memory-stats">
+                <p>Matches: <span id="matches">0</span> / <span id="total-pairs">0</span></p>
+                <p>Attempts: <span id="attempts">0</span></p>
+            </div>
+        </div>
+
+        <!-- Flashcard Mode -->
+        <div id="flashcard-mode" class="exercise-mode">
+            <div class="flashcard" id="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h2 id="flashcard-term">et cetera</h2>
+                        <p class="hint">Click to reveal meaning</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p id="flashcard-meaning">and the rest; and so forth</p>
+                        <p class="hint">Click to flip back</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flashcard-controls">
+                <button id="prev-card" class="btn">← Previous</button>
+                <span id="card-counter">1 / 20</span>
+                <button id="next-card" class="btn">Next →</button>
+            </div>
+        </div>
+
+        <!-- Quiz Mode -->
+        <div id="quiz-mode" class="exercise-mode">
+            <div class="quiz-container">
+                <div class="quiz-question">
+                    <p class="question-number">Question <span id="question-num">1</span> of <span id="total-questions">10</span></p>
+                    <h3 id="quiz-question-text">What does "et cetera" mean?</h3>
+                </div>
+                <div class="quiz-options" id="quiz-options">
+                    <button class="quiz-option">Option 1</button>
+                    <button class="quiz-option">Option 2</button>
+                    <button class="quiz-option">Option 3</button>
+                    <button class="quiz-option">Option 4</button>
+                </div>
+                <div class="quiz-feedback" id="quiz-feedback"></div>
+                <button id="next-question" class="btn btn-primary" style="display: none;">Next Question</button>
+            </div>
+            <div class="quiz-results" id="quiz-results" style="display: none;">
+                <h2>Quiz Complete!</h2>
+                <p>Your Score: <span id="quiz-score">0</span> / <span id="quiz-total">10</span></p>
+                <p>Percentage: <span id="quiz-percentage">0</span>%</p>
+                <button id="restart-quiz" class="btn btn-primary">Restart Quiz</button>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>💡 Memory Tips</h3>
+            <ul>
+                <li>Practice regularly - consistency is key to memory retention</li>
+                <li>Use spaced repetition - review terms at increasing intervals</li>
+                <li>Create associations - link Latin terms to familiar words or concepts</li>
+                <li>Break down complex terms into smaller, memorable parts</li>
+                <li>Use the terms in sentences to reinforce their meaning</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="latin-terms.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
