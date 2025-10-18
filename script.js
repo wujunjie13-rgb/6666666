@@ -239,7 +239,7 @@ function showResults() {
                 <div class="score-percentage">${percentage}%</div>
             </div>
             <p class="results-message">${message}</p>
-            <button class="btn-primary" onclick="restartQuiz()">Take Another Quiz</button>
+            <button class="btn-primary" id="restartQuizBtn">Take Another Quiz</button>
         </div>`;
     
     quizResults.style.display = 'block';
@@ -248,6 +248,9 @@ function showResults() {
     nextQuestionBtn.style.display = 'none';
     document.querySelector('.quiz-progress').style.display = 'none';
     document.querySelector('.quiz-question').style.display = 'none';
+    
+    // Add event listener to the restart button
+    document.getElementById('restartQuizBtn').addEventListener('click', restartQuiz);
 }
 
 function restartQuiz() {

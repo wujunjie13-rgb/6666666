@@ -27,7 +27,7 @@ const skeletonData = [
     },
     {
         latin: "Occipital bone",
-        finnish: "Takaraivoluut",
+        finnish: "Takaraivoluu",
         region: "skull",
         description: "Back of skull"
     },
@@ -371,7 +371,7 @@ const skeletonData = [
     // Hands (Carpals, Metacarpals, Phalanges)
     {
         latin: "Scaphoid",
-        finnish: "Veneluut",
+        finnish: "Veneluu",
         region: "hands",
         description: "Wrist bone, radial side"
     },
@@ -495,7 +495,7 @@ const skeletonData = [
     },
     {
         latin: "Patella",
-        finnish: "Polvilumpiot",
+        finnish: "Polvilumpio",
         region: "legs",
         description: "Kneecap (2 bones)"
     },
